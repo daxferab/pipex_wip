@@ -1,6 +1,6 @@
 NAME = pipex
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g3
 
 LIBFT = libft/libft.a
 
@@ -28,8 +28,5 @@ fclean:
 	rm -rf $(NAME) $(OBJ_FILES)
 
 re: fclean all
-
-valgrind: all
-	valgrind --trace-children=yes ./$(NAME) infile "ls -l" "wc -l" outfile
 
 .PHONY: all clean fclean re

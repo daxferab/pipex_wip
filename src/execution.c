@@ -6,7 +6,7 @@
 /*   By: daxferna <daxferna@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 16:58:43 by daxferna          #+#    #+#             */
-/*   Updated: 2025/03/04 16:53:26 by daxferna         ###   ########.fr       */
+/*   Updated: 2025/03/06 19:40:16 by daxferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ static char	*get_path(char **envp, char	*cmd)
 		path = ft_strjoin(path_split[i], cmd);
 		if (access(path, X_OK) == 0)
 			return (free_split(path_split), free(line), free(cmd), path);
+		free(path);
 		i++;
 	}
-	return (free_split(path_split), free(line), free(cmd), free(path), NULL);
+	return (free_split(path_split), free(line), free(cmd), NULL);
 }
 
 void	execute(char **envp, char *argv)

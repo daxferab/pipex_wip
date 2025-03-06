@@ -6,7 +6,7 @@
 /*   By: daxferna <daxferna@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 03:24:00 by daxferna          #+#    #+#             */
-/*   Updated: 2025/03/04 16:57:19 by daxferna         ###   ########.fr       */
+/*   Updated: 2025/03/06 19:40:53 by daxferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	free_split(char **split)
 	i = 0;
 	while (split[i])
 		free(split[i++]);
+	free(split);
 }
 
 void	error(int code)
